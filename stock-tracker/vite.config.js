@@ -3,4 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+      // Add your ngrok host here
+      allowedHosts: ['friended-superperfect-sherice.ngrok-free.dev']
+    }
 });
