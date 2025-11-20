@@ -50,9 +50,9 @@ public class AdminController {
         UserStats stats = userStats.get(userId);
         if (stats != null) {
             stats.reset();
-            return ResponseEntity.ok("✅ Rate limit reset for user: " + userId);
+            return ResponseEntity.ok(" Rate limit reset for user: " + userId);
         } else {
-            return ResponseEntity.badRequest().body("❌ User not found");
+            return ResponseEntity.badRequest().body(" User not found");
         }
     }
 
@@ -85,7 +85,7 @@ public class AdminController {
     @PutMapping("/policies/{userId}")
     public ResponseEntity<?> updatePolicy(@PathVariable String userId, @RequestBody Policy newPolicy) {
         if (newPolicy == null || newPolicy.getLimit() <= 0 || newPolicy.getRefillRate() <= 0) {
-            return ResponseEntity.badRequest().body("❌ Invalid policy values");
+            return ResponseEntity.badRequest().body(" Invalid policy values");
         }
         policies.put(userId, new Policy(userId, newPolicy.getLimit(), newPolicy.getRefillRate()));
         policyService.updatePolicy(userId, newPolicy.getLimit(), newPolicy.getRefillRate());

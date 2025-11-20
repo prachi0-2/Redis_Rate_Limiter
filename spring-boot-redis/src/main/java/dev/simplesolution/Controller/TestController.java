@@ -28,14 +28,14 @@ TestController {
         if (response.isAllowed()) {
             statusCode = 200;
             result= ResponseEntity.ok(
-                    "✅ Request allowed for user: " + userId +
+                    " Request allowed for user: " + userId +
                             " | Tokens left: " + response.getValue()
             );
         } else {
             statusCode = 429;
             result= ResponseEntity.status(429) // HTTP 429 Too Many Requests
                     .header("Retry-After", String.valueOf(response.getValue())) // HTTP header
-                    .body("⛔ Rate limit exceeded for user: " + userId +
+                    .body(" Rate limit exceeded for user: " + userId +
                             " | Retry after: " + response.getValue() + " seconds");
         }
 

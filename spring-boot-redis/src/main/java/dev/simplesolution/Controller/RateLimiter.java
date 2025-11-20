@@ -20,9 +20,9 @@ public class RateLimiter {
         this.redisTemplate = redisTemplate;
         this.policyService = policyService;
 
-        // ✅ Lua Script for Token Bucket
+        // Lua Script for Token Bucket
         String lua = ""
-                // --- ✅ SAFETY: Delete key if wrong type ---
+                // ---  SAFETY: Delete key if wrong type ---
                 + "local keyType = redis.call('TYPE', KEYS[1]).ok "
                 + "if keyType ~= 'hash' and keyType ~= 'none' then "
                 + "    redis.call('DEL', KEYS[1]) "
