@@ -155,10 +155,6 @@ npm install
 npm run dev
 
 
-Frontend runs at:
-
-http://localhost:5173
-
 📈 API Example
 Request
 GET http://localhost:8080/test?userId=john
@@ -181,18 +177,4 @@ JWT authentication
 
 Real-time stock streaming
 
-🤝 Contributing
 
-Pull requests are welcome—bugs, improvements, documentation, anything!
-
-📜 License
-
-MIT License
-
-If you want, I can also generate:
-
-✅ Badges (Redis, Java, React, License, etc.)
-✅ Flow diagram of request → rate limiter → response
-✅ Dashboard UI screenshots section
-
-Just tell me!
